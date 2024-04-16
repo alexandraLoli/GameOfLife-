@@ -229,3 +229,35 @@ Received Import Request.
 Start importing Assets/helpers/money tree.png using Guid(ac7b0097f21066445b55698697a0e881) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38843708c99b3fb1ae0f2dc6c72bc86c') in 0.040054 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 73.644892 seconds.
+  path: Assets/helpers/New Piskel (1).png
+  artifactKey: Guid(45604fcd9626ee44db550afc33106806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/helpers/New Piskel (1).png using Guid(45604fcd9626ee44db550afc33106806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70694d90d75bc8b980fb5cf529dc30b0') in 0.037935 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 37.918711 seconds.
+  path: Assets/helpers/ElDoctor.png
+  artifactKey: Guid(1dffacd45e0bea44e904b86bcb7af0e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/helpers/ElDoctor.png using Guid(1dffacd45e0bea44e904b86bcb7af0e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a235fff698dad996db1915367b0052d') in 0.136240 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 48.529164 seconds.
+  path: Assets/projectiles/pill.png
+  artifactKey: Guid(59ec72e3fee089b4f999fda6d2719d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/projectiles/pill.png using Guid(59ec72e3fee089b4f999fda6d2719d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe10c6c5671ddaaa89ed84d94a5a2216') in 0.053310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 185.642645 seconds.
+  path: Assets/enemies/ilnesses/virus.png
+  artifactKey: Guid(9c38ef6ef2f24a34aa8de9e75bc70d63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/enemies/ilnesses/virus.png using Guid(9c38ef6ef2f24a34aa8de9e75bc70d63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d56b9d6d7c04451b966f626662bc4cd') in 0.054271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
