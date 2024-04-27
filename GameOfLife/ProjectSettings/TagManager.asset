@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Helper
+  - Illness
+  - Addiction
+  - Sorrow
+  - Accident
+  - Avatar
   layers:
   - Default
   - TransparentFX
@@ -11,8 +18,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - ProjectileLayer
+  - HelperLayer
   - 
   - 
   - 
