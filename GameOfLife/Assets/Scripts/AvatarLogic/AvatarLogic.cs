@@ -9,12 +9,14 @@ public class AvatarLogic : MonoBehaviour
     public List<Renderer> avatarGirl;
     public List<Renderer> avatarBoy;
     private int life;
+    private int fullLife;
 
 
     // Start is called before the first frame update
     void Start()
     {
         life = lifes.Count;
+        fullLife = lifes.Count;
         for (int i = 0; i < avatarGirl.Count; i++)
         {
             avatarGirl[i].enabled = false;
@@ -25,12 +27,25 @@ public class AvatarLogic : MonoBehaviour
             avatarBoy[i].enabled = false;
         }
 
-        avatarBoy[2].enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (life > fullLife / 3 * 2)
+        {
+            avatarBoy[2].enabled = true;
+        }
+        else if (life > fullLife / 3 * 1)
+        {
+            avatarBoy[2].enabled = false;
+            avatarBoy[1].enabled = true;
+        }
+        else if (life > 0)
+        {
+            avatarBoy[1].enabled = false;
+            avatarBoy[0].enabled = true;
+        }
         if (life == 0)
         {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 2);
