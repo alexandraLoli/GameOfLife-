@@ -11,6 +11,8 @@ TagManager:
   - Sorrow
   - Accident
   - Avatar
+  - MoneyTree
+  - Shield
   layers:
   - Default
   - TransparentFX
