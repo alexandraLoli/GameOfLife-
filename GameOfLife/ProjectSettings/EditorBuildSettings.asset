@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: a3dc74e31917bfe4182f3ff5d27c1a0d
   - enabled: 1
+    path: Assets/Scenes/ChildTransition.unity
+    guid: 397f36b0e5e391247a91c9a5df4a323c
+  - enabled: 1
     path: Assets/Scenes/ChildPhase.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
