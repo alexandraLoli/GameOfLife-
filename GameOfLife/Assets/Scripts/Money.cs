@@ -14,12 +14,12 @@ public class Money : MonoBehaviour
 
     void Start()
     {
-        variableToDisplay = Random.Range(50, 250);
+        variableToDisplay = Random.Range(300, 400);
     }
 
     // Update is called once per frame
     void Update()
     {
-        textfield.text = "Total: " + variableToDisplay;
+        textfield.text = "Total: " + variableToDisplay + "$";
     }
 }
