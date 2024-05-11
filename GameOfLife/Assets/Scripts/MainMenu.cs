@@ -15,6 +15,31 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(2);
     }
 
+    public void StartTeenPhase()
+    {
+        SceneManager.LoadSceneAsync(4);
+    }
+
+    public void StartAdultPhase()
+    {
+        SceneManager.LoadSceneAsync(6);
+    }
+
+    public void StartOldPhase()
+    {
+        SceneManager.LoadSceneAsync(8);
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadSceneAsync(1);
+    }
+
     public void OnApplicationQuit()
     {
        Application.Quit();
