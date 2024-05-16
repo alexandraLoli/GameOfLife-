@@ -46,7 +46,7 @@ public class AvatarLogic : MonoBehaviour
             avatarBoy[1].enabled = false;
             avatarBoy[0].enabled = true;
         }
-        if (life == 0)
+        if (life <= 0)
         {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 2);
         }

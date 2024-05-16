@@ -52,6 +52,10 @@ public class Characteristics : MonoBehaviour
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(-1.0f, 0.0f);
         }
+        else if (collision.gameObject.CompareTag("Shield"))
+        {
+
+        }
         else
         {
             Destroy(collision.gameObject);

@@ -7,25 +7,36 @@ public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
-  
-    private bool isDragging = false;
-    private Vector3 offset;
-    public bool isSet = false;
+    // variables for new instance
+    public GameObject canvas;
+    private Money script;
+    public int price;
+    public Transform spawnPoint;
+
+    //variable for projectile
     public GameObject projectile;
     public Transform firePoint;
     private float fireTimer = 0f;
 
+    // variable for drag and drop
+    private bool isDragging = false;
+    private Vector3 offset;
+    public bool isSet = false;
     public List<GameObject> gameTable;
    
     void Start()
     {
+        script = canvas.GetComponent<Money>();
 
+        // dont show the helper
+        this.gameObject.GetComponent<Renderer>().enabled = false;
     }
 
             
     // Update is called once per frame
     void Update()
     {
+        // fire projectile just if the helper is set on the game table
         if (isSet)
         {
             if (fireTimer >= 2f)
@@ -40,9 +51,22 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
-        isDragging = true;
-        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (!isSet)
+        {
+            if (script.variableToDisplay >= price)
+            {
+                spawnPoint.transform.position = transform.position;
+                spawnPoint.transform.rotation = Quaternion.identity;
+
+                Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
+
+                isDragging = true;
+                offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                this.gameObject.GetComponent<Renderer>().enabled = true;
+
+                script.variableToDisplay -= price;
+            }
+        }
 
     }
 

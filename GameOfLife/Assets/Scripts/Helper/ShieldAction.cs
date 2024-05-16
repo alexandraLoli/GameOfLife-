@@ -4,38 +4,78 @@ using UnityEngine;
 
 public class ShieldAction : MonoBehaviour
 {
+    // variables for new instance
+    public GameObject canvas;
+    private Money script;
+    public int price;
+    public Transform spawnPoint;
+
+    // variables used for drag and drop
     private bool isDragging = false;
     private Vector3 offset;
     public bool isSet = false;
-    public GameObject projectile;
-    public Transform firePoint;
-    private float fireTimer = 0f;
-
     public List<GameObject> gameTable;
+
+    // variables used for defending the enemy
+    public float life = 5;
+    private bool inCollision = false;
+    private List<GameObject> enemiesWaiting = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-     
+        script = canvas.GetComponent<Money>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isSet && inCollision)
+        {
+            if (life <= 0)
+            {
+                
+                for (int i = 0; i < enemiesWaiting.Count; i++)
+                {
+                    Rigidbody2D rb = enemiesWaiting[i].GetComponent<Rigidbody2D>();
+                    rb.velocity = new Vector2(-1.0f, 0.0f);
+                }
+
+                enemiesWaiting.Clear();
+                Destroy(gameObject);
+
+            } else
+            {
+                life -= Time.deltaTime;
+            }
+        }
+
+       
     }
 
     private void OnMouseDown()
     {
+        if (!isSet)
+        {
+            if (script.variableToDisplay >= price)
+            {
+                spawnPoint.transform.position = transform.position;
+                spawnPoint.transform.rotation = Quaternion.identity;
 
-        isDragging = true;
-        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
+
+                isDragging = true;
+                offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                script.variableToDisplay -= price;
+            }
+        }
 
     }
 
     private void OnMouseUp()
     {
-        Debug.Log(gameTable.Count);
+        
         for (int i = 0; i < gameTable.Count; i++)
         {
 
@@ -71,6 +111,8 @@ public class ShieldAction : MonoBehaviour
                 collision.gameObject.CompareTag("Accident") ||
                 collision.gameObject.CompareTag("Addiction"))
             {
+                inCollision = true;
+                enemiesWaiting.Add(collision.gameObject);
 
             }
         }
