@@ -9,8 +9,8 @@ public class SpwanEnemy : MonoBehaviour
     public List<GameObject> enemies;
     public Transform spawnPoint;
 
-    private int minLimit = 5;
-    private int maxLimit = 7;
+    private int minLimit = 4;
+    private int maxLimit = 6;
     private float spawnTime = 0;
 
     // variables for accidents

@@ -20,6 +20,9 @@ public class TreeAction : MonoBehaviour
     private float moneyInterval = 5;
     public GameObject moneySign;
 
+    // variable to memorize where is a helper on the table
+    private int squareIndex = -1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +74,12 @@ public class TreeAction : MonoBehaviour
                 script.variableToDisplay -= price;
             }
         }
+        else if (squareIndex != -1)
+        {
+            SqaureDrop square = gameTable[squareIndex].GetComponent<SqaureDrop>();
+            square.inUse = false;
+            Destroy(gameObject);
+        }
 
     }
 
@@ -87,10 +96,22 @@ public class TreeAction : MonoBehaviour
                 )
             {
                 transform.position = gameTable[i].transform.position;
+                squareIndex = i;
+
+                SqaureDrop square = gameTable[i].GetComponent<SqaureDrop>();
+                square.inUse = true;
             }
             isDragging = false;
             isSet = true;
         }
+
+        if (squareIndex == -1)
+        {
+            script.variableToDisplay += price;
+            Destroy(gameObject);
+
+        }
+
 
     }
 

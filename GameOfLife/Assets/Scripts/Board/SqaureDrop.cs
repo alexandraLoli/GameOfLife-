@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class SqaureDrop : MonoBehaviour
 {
 
+    public bool inUse = false;
 
     // Start is called before the first frame update
     void Start()

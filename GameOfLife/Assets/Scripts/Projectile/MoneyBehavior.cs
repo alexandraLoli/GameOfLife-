@@ -9,6 +9,7 @@ public class MoneyBehavior : MonoBehaviour
     // variables to gain money
     public GameObject canvas;
     private Money sprite;
+    public int value;
     void Start()
     {
         sprite = canvas.GetComponent<Money>();
@@ -23,7 +24,7 @@ public class MoneyBehavior : MonoBehaviour
 
     private void OnMouseDown()
     {
-        sprite.variableToDisplay += 50;
+        sprite.variableToDisplay += value;
         Destroy(gameObject);
     }
 }

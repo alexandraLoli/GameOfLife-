@@ -23,6 +23,9 @@ public class NewBehaviourScript : MonoBehaviour
     private Vector3 offset;
     public bool isSet = false;
     public List<GameObject> gameTable;
+
+    // variable to memorize where is a helper on the table
+    private int squareIndex = -1;
    
     void Start()
     {
@@ -66,8 +69,10 @@ public class NewBehaviourScript : MonoBehaviour
 
                 script.variableToDisplay -= price;
             }
-        } else
+        } else if (squareIndex != -1)
         {
+            SqaureDrop square = gameTable[squareIndex].GetComponent<SqaureDrop>();
+            square.inUse = false;
             Destroy(gameObject);
         }
 
@@ -75,7 +80,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnMouseUp()
     {
-        bool inTable = false;
         Debug.Log(gameTable.Count);
         for (int i = 0; i< gameTable.Count; i++)
         {
@@ -87,13 +91,16 @@ public class NewBehaviourScript : MonoBehaviour
                 )
             {
                 transform.position = gameTable[i].transform.position;
-                inTable = true;
+                squareIndex = i;
+
+                SqaureDrop square = gameTable[i].GetComponent<SqaureDrop>();
+                square.inUse = true;
             }
             isDragging = false;
             isSet = true;
         }
 
-        if (!inTable)
+        if (squareIndex == -1)
         {
             script.variableToDisplay += price;
             Destroy(gameObject);

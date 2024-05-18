@@ -21,6 +21,9 @@ public class ShieldAction : MonoBehaviour
     private bool inCollision = false;
     private List<GameObject> enemiesWaiting = new List<GameObject>();
 
+    // variable to memorize where is a helper on the table
+    private int squareIndex = -1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,12 +87,17 @@ public class ShieldAction : MonoBehaviour
                 script.variableToDisplay -= price;
             }
         }
+        else if (squareIndex != -1)
+        {
+            SqaureDrop square = gameTable[squareIndex].GetComponent<SqaureDrop>();
+            square.inUse = false;
+            Destroy(gameObject);
+        }
 
     }
 
     private void OnMouseUp()
     {
-        bool onTable = false;
         
         for (int i = 0; i < gameTable.Count; i++)
         {
@@ -101,16 +109,20 @@ public class ShieldAction : MonoBehaviour
                 )
             {
                 transform.position = gameTable[i].transform.position;
-                onTable = true;
+                squareIndex = i;
+
+                SqaureDrop square = gameTable[i].GetComponent<SqaureDrop>();
+                square.inUse = true;
             }
             isDragging = false;
             isSet = true;
         }
 
-        if (!onTable)
+        if (squareIndex == -1)
         {
             script.variableToDisplay += price;
             Destroy(gameObject);
+
         }
 
     }

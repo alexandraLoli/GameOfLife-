@@ -16,6 +16,7 @@ public class GameLogic : MonoBehaviour
     // variables to get money
     public GameObject moneySign;
     private float moneyInterval = 10;
+    private MoneyBehavior moneyBehaviorScript;
 
     // variable to interact with total currency
     private Money script;
@@ -24,28 +25,32 @@ public class GameLogic : MonoBehaviour
     void Start()
     {
         script = canvas.GetComponent<Money>();
-        
+        moneyBehaviorScript = moneySign.GetComponent<MoneyBehavior>();
         if (stage == 1)
         {
             gameTime = 60;
+            moneyBehaviorScript.value = 50;
             script.minRange = 100;
             script.maxRange = 200;
         }
         else if (stage == 2)
         {
             gameTime = 120;
+            moneyBehaviorScript.value = 100;
             script.minRange = 200;
             script.maxRange = 300;
         }
         else if (stage == 3)
         {
             gameTime = 180;
+            moneyBehaviorScript.value = 150;
             script.minRange = 300;
             script.maxRange = 400;
         }
         else if (stage == 4)
         {
             gameTime = 240;
+            moneyBehaviorScript.value = 100;
             script.minRange = 300;
             script.maxRange = 400;
         }
