@@ -10,11 +10,18 @@ public class Money : MonoBehaviour
 
     // Start is called before the first frame update
     public TMP_Text textfield;
+    public int minRange;
+    public int maxRange;
     public int variableToDisplay;
 
     void Start()
     {
-        variableToDisplay = Random.Range(300, 400);
+        
+    }
+
+    public void calculateMoney()
+    {
+        variableToDisplay = Random.Range(minRange, maxRange);
     }
 
     // Update is called once per frame

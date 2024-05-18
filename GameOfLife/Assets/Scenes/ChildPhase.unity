@@ -133,9 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 59284738}
   - component: {fileID: 59284739}
+  - component: {fileID: 59284741}
   m_Layer: 0
   m_Name: ElInger
-  m_TagString: Untagged
+  m_TagString: AngelShield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 59284737}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.3, y: 2.14, z: 0}
+  m_LocalPosition: {x: 16.75, y: -2.92, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -195,7 +196,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: f5fe3f64a4564fd4f91e429e1de82064, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -207,6 +208,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &59284741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59284737}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 17.40673, y: 74.79135, z: 0.2}
+  m_Center: {x: -0.89663506, y: 27.795649, z: 0}
 --- !u!1 &80650693
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +691,7 @@ Transform:
   m_GameObject: {fileID: 187846894}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.05, y: -3.54, z: 0}
+  m_LocalPosition: {x: 25.32, y: 2.58, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -893,7 +915,7 @@ Transform:
   m_GameObject: {fileID: 212652009}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.95, y: 4.51, z: 0}
+  m_LocalPosition: {x: 20.51, y: 4.51, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1243,7 +1265,7 @@ Transform:
   m_GameObject: {fileID: 232990823}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11, y: 0.66, z: 0}
+  m_LocalPosition: {x: 25.12, y: -0.9, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1858,7 +1880,7 @@ Transform:
   m_GameObject: {fileID: 398425239}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.46, y: 2.12, z: 0}
+  m_LocalPosition: {x: 22.04, y: 4.58, z: 0}
   m_LocalScale: {x: 0.09, y: 0.09, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2045,9 +2067,10 @@ GameObject:
   - component: {fileID: 477331746}
   - component: {fileID: 477331745}
   - component: {fileID: 477331744}
+  - component: {fileID: 477331747}
   m_Layer: 0
   m_Name: ScoutAngel
-  m_TagString: Untagged
+  m_TagString: AngelShield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2061,7 +2084,7 @@ Transform:
   m_GameObject: {fileID: 477331742}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.54, y: 0.04, z: 0}
+  m_LocalPosition: {x: 14.9, y: -0.42, z: 0}
   m_LocalScale: {x: 0.3, y: 1.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2191,6 +2214,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &477331747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477331742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d7be5830f18714a97a845bd8725e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  original: 1
+  angel: {fileID: 0}
 --- !u!1 &487012149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,6 +2456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 1
   moneySign: {fileID: 1467391959}
+  canvas: {fileID: 2068434809}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2603,7 +2641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 2068434809}
-  price: 0
+  price: 100
   spawnPoint: {fileID: 545255112}
   isSet: 0
   gameTable:
@@ -2831,6 +2869,7 @@ GameObject:
   - component: {fileID: 622029372}
   - component: {fileID: 622029371}
   - component: {fileID: 622029373}
+  - component: {fileID: 622029374}
   m_Layer: 0
   m_Name: ElIngerBust
   m_TagString: Untagged
@@ -2950,6 +2989,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.318584, y: 12.882885}
   m_EdgeRadius: 0
+--- !u!114 &622029374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622029370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f77a91dac82cb4ea3beaa8e12fb5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 0
+  canvas: {fileID: 2068434809}
+  angel: {fileID: 59284737}
+  scout: {fileID: 477331742}
 --- !u!1 &628623889
 GameObject:
   m_ObjectHideFlags: 0
@@ -3007,7 +3062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Money Tree: \n200$"
+  m_text: "Money Tree: \n100$"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d59cf96b3fa26ad47873bdf45bcaa804, type: 2}
   m_sharedMaterial: {fileID: 6449886662624825225, guid: d59cf96b3fa26ad47873bdf45bcaa804, type: 2}
@@ -3196,7 +3251,7 @@ Transform:
   m_GameObject: {fileID: 733655246}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.99, y: 4.26, z: 0}
+  m_LocalPosition: {x: 10.86, y: 4.21, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3547,7 +3602,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Shield: \n150$"
+  m_text: "Shield: \n100$"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d59cf96b3fa26ad47873bdf45bcaa804, type: 2}
   m_sharedMaterial: {fileID: 6449886662624825225, guid: d59cf96b3fa26ad47873bdf45bcaa804, type: 2}
@@ -3944,7 +3999,7 @@ Transform:
   m_GameObject: {fileID: 1026890938}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.84, y: 0.08, z: 0}
+  m_LocalPosition: {x: 23.73, y: 0.69, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4213,7 +4268,7 @@ Transform:
   m_GameObject: {fileID: 1038306183}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.43, y: -3.59, z: 0}
+  m_LocalPosition: {x: 23.34, y: -2.67, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4288,7 +4343,7 @@ Transform:
   m_GameObject: {fileID: 1113928482}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.7, y: 1.68, z: 0}
+  m_LocalPosition: {x: 20.74, y: 0.4, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4460,7 +4515,7 @@ Transform:
   m_GameObject: {fileID: 1147987314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.86, y: -1.29, z: 0}
+  m_LocalPosition: {x: 22.21, y: 0.53, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4999,7 +5054,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1266025221}
   - component: {fileID: 1266025222}
-  - component: {fileID: 1266025223}
   m_Layer: 0
   m_Name: ElAmigaBust
   m_TagString: Untagged
@@ -5074,51 +5128,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1266025223
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266025220}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.13471031, y: 0.00000333786}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 19.2}
-    newSize: {x: 19.2, y: 19.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 15.15868, y: 12.73389}
-  m_EdgeRadius: 0
 --- !u!1 &1286517129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5479,7 +5488,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1404921478}
   - component: {fileID: 1404921477}
-  - component: {fileID: 1404921479}
   m_Layer: 0
   m_Name: AmigoBust
   m_TagString: Untagged
@@ -5554,51 +5562,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 487012150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1404921479
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404921476}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.26942158, y: 0.26942348}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 19.2}
-    newSize: {x: 19.2, y: 19.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 15.4281025, y: 13.27273}
-  m_EdgeRadius: 0
 --- !u!1 &1409680187
 GameObject:
   m_ObjectHideFlags: 0
@@ -5899,7 +5862,7 @@ Transform:
   m_GameObject: {fileID: 1467391959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.77, y: 3.63, z: 0}
+  m_LocalPosition: {x: 19.02, y: 4.65, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6744,7 +6707,7 @@ Transform:
   m_GameObject: {fileID: 1627831416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.55, y: -0.98, z: 0}
+  m_LocalPosition: {x: 23.08, y: 2.73, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6800,7 +6763,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1652113547}
   - component: {fileID: 1652113546}
-  - component: {fileID: 1652113548}
   m_Layer: 0
   m_Name: ElDoctorBust
   m_TagString: Untagged
@@ -6875,51 +6837,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 487012150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1652113548
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652113545}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.5388396, y: 0.0000009536743}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 19.2}
-    newSize: {x: 19.2, y: 19.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 14.350431, y: 13.272734}
-  m_EdgeRadius: 0
 --- !u!1 &1656086951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,7 +6847,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1656086953}
   - component: {fileID: 1656086952}
-  - component: {fileID: 1656086954}
   m_Layer: 0
   m_Name: ElPsihologBust
   m_TagString: Untagged
@@ -7005,51 +6921,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 487012150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1656086954
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656086951}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.2694254, y: 0.5388441}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 19.2}
-    newSize: {x: 19.2, y: 19.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 14.889267, y: 13.272728}
-  m_EdgeRadius: 0
 --- !u!1 &1682045296
 GameObject:
   m_ObjectHideFlags: 0
@@ -7163,7 +7034,7 @@ Transform:
   m_GameObject: {fileID: 1711142810}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.88, y: -0.49, z: 0}
+  m_LocalPosition: {x: 20.26, y: -4.1, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7335,7 +7206,7 @@ Transform:
   m_GameObject: {fileID: 1750300862}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.27, y: -0.22, z: 0}
+  m_LocalPosition: {x: 23.62, y: 4.57, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7506,7 +7377,7 @@ Transform:
   m_GameObject: {fileID: 1767038889}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.24, y: 1.02, z: 0}
+  m_LocalPosition: {x: 20.9, y: 2.63, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8399,7 +8270,7 @@ Transform:
   m_GameObject: {fileID: 1941039528}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.07, y: -2.67, z: 0}
+  m_LocalPosition: {x: 21.27, y: -2.49, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8798,7 +8669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 2068434809}
-  price: 0
+  price: 100
   spawnPoint: {fileID: 2018064287}
   isSet: 0
   gameTable:
@@ -9132,7 +9003,7 @@ Transform:
   m_GameObject: {fileID: 2038071651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.04, y: 2.15, z: 0}
+  m_LocalPosition: {x: 22.77, y: -1.03, z: 0}
   m_LocalScale: {x: 0.06, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9399,6 +9270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textfield: {fileID: 236496900}
+  minRange: 0
+  maxRange: 0
   variableToDisplay: 0
 --- !u!1 &2078250925
 GameObject:

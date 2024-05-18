@@ -17,25 +17,40 @@ public class GameLogic : MonoBehaviour
     public GameObject moneySign;
     private float moneyInterval = 10;
 
+    // variable to interact with total currency
+    private Money script;
+    public GameObject canvas;
+
     void Start()
     {
+        script = canvas.GetComponent<Money>();
         
         if (stage == 1)
         {
             gameTime = 60;
+            script.minRange = 100;
+            script.maxRange = 200;
         }
         else if (stage == 2)
         {
             gameTime = 120;
+            script.minRange = 200;
+            script.maxRange = 300;
         }
         else if (stage == 3)
         {
             gameTime = 180;
+            script.minRange = 300;
+            script.maxRange = 400;
         }
         else if (stage == 4)
         {
             gameTime = 240;
+            script.minRange = 300;
+            script.maxRange = 400;
         }
+
+        script.calculateMoney();
     }
 
     // Update is called once per frame

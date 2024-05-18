@@ -30,6 +30,20 @@ public class ShieldAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        for (int i = 0; i < enemiesWaiting.Count; i++)
+        {
+            if (enemiesWaiting[i] == null)
+            {
+                enemiesWaiting.Remove(enemiesWaiting[i]);
+                i--;
+            }
+        }
+
+        if (enemiesWaiting.Count == 0) {
+            inCollision = false;
+        }
+
         if (isSet && inCollision)
         {
             if (life <= 0)
@@ -50,7 +64,7 @@ public class ShieldAction : MonoBehaviour
             }
         }
 
-       
+        
     }
 
     private void OnMouseDown()
@@ -75,6 +89,7 @@ public class ShieldAction : MonoBehaviour
 
     private void OnMouseUp()
     {
+        bool onTable = false;
         
         for (int i = 0; i < gameTable.Count; i++)
         {
@@ -86,9 +101,16 @@ public class ShieldAction : MonoBehaviour
                 )
             {
                 transform.position = gameTable[i].transform.position;
+                onTable = true;
             }
             isDragging = false;
             isSet = true;
+        }
+
+        if (!onTable)
+        {
+            script.variableToDisplay += price;
+            Destroy(gameObject);
         }
 
     }

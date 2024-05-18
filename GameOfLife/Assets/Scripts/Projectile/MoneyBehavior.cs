@@ -12,6 +12,7 @@ public class MoneyBehavior : MonoBehaviour
     void Start()
     {
         sprite = canvas.GetComponent<Money>();
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("MoneyLayer"), LayerMask.NameToLayer("Default"), true);
     }
 
     // Update is called once per frame
