@@ -52,6 +52,19 @@ public class Characteristics : MonoBehaviour
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(-1.0f, 0.0f);
         }
+        else if (collision.gameObject.CompareTag("AngelShield") && gameObject.CompareTag("Accident"))
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("AngelShield") && !gameObject.CompareTag("Accident"))
+        {
+
+            AngelScoutBehavior script = collision.gameObject.GetComponent<AngelScoutBehavior>();
+            Destroy(script.angel);
+            Destroy(collision.gameObject);
+            Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(-1.0f, 0.0f);
+        }
         else if (collision.gameObject.CompareTag("Shield"))
         {
 

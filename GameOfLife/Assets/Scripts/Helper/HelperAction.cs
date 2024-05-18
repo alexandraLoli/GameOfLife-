@@ -72,6 +72,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnMouseUp()
     {
+        bool inTable = false;
         Debug.Log(gameTable.Count);
         for (int i = 0; i< gameTable.Count; i++)
         {
@@ -83,9 +84,17 @@ public class NewBehaviourScript : MonoBehaviour
                 )
             {
                 transform.position = gameTable[i].transform.position;
+                inTable = true;
             }
             isDragging = false;
             isSet = true;
+        }
+
+        if (!inTable)
+        {
+            script.variableToDisplay += price;
+            Destroy(gameObject);
+            
         }
         
     }
