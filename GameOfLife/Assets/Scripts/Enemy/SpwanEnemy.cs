@@ -75,7 +75,7 @@ public class SpwanEnemy : MonoBehaviour
     
         Rigidbody2D enemyRB = newEnemy.GetComponent<Rigidbody2D>();
 
-        enemyRB.velocity = new Vector2(-1f,0f);
+        enemyRB.velocity = new Vector2(-0.5f,0f);
         enemyRB.gravityScale = 0f;
         enemyRB.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
@@ -107,7 +107,7 @@ public class SpwanEnemy : MonoBehaviour
 
         Rigidbody2D enemyRB = newEnemy.GetComponent<Rigidbody2D>();
 
-        enemyRB.velocity = new Vector2(-1f, 0f);
+        enemyRB.velocity = new Vector2(-0.5f, 0f);
         enemyRB.gravityScale = 0f;
         enemyRB.constraints = RigidbodyConstraints2D.FreezeRotation;
     }

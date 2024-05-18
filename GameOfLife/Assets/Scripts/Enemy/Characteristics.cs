@@ -37,20 +37,20 @@ public class Characteristics : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(-1.0f, 0.0f);
+            rb.velocity = new Vector2(-0.5f, 0.0f);
         } 
         else if (collision.gameObject.tag == gameObject.tag)
         {
             Destroy(collision.gameObject);
             life--;
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(-1.0f, 0.0f);
+            rb.velocity = new Vector2(-0.5f, 0.0f);
         }
         else if (collision.gameObject.CompareTag("Avatar"))
         {
             Destroy(gameObject);
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(-1.0f, 0.0f);
+            rb.velocity = new Vector2(-0.5f, 0.0f);
         }
         else if (collision.gameObject.CompareTag("AngelShield") && gameObject.CompareTag("Accident"))
         {
@@ -63,7 +63,7 @@ public class Characteristics : MonoBehaviour
             Destroy(script.angel);
             Destroy(collision.gameObject);
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(-1.0f, 0.0f);
+            rb.velocity = new Vector2(-0.5f, 0.0f);
         }
         else if (collision.gameObject.CompareTag("Shield"))
         {
@@ -73,7 +73,7 @@ public class Characteristics : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(-1.0f, 0.0f);
+            rb.velocity = new Vector2(-0.5f, 0.0f);
         }
     }
 

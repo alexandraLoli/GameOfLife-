@@ -16,7 +16,7 @@ public class NewBehaviourScript : MonoBehaviour
     //variable for projectile
     public GameObject projectile;
     public Transform firePoint;
-    private float fireTimer = 0f;
+    private float fireTimer = 1.5f;
 
     // variable for drag and drop
     private bool isDragging = false;
@@ -66,6 +66,9 @@ public class NewBehaviourScript : MonoBehaviour
 
                 script.variableToDisplay -= price;
             }
+        } else
+        {
+            Destroy(gameObject);
         }
 
     }
@@ -115,7 +118,7 @@ public class NewBehaviourScript : MonoBehaviour
             GameObject newProjectile = Instantiate(projectile, firePoint.position + new Vector3(1.0f, 0.0f, 0.0f), firePoint.rotation);
             Rigidbody2D projectileRB = newProjectile.GetComponent<Rigidbody2D>();
 
-            projectileRB.velocity = new Vector2(1f, 0f);
+            projectileRB.velocity = new Vector2(1.5f, 0f);
             projectileRB.gravityScale = 0f;
             projectileRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
