@@ -1347,8 +1347,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 200
   canvas: {fileID: 1183952625}
-  angel: {fileID: 1819739992}
-  scout: {fileID: 2127671565}
+  angel: {fileID: 2127671565}
+  scout: {fileID: 1819739992}
 --- !u!61 &283397643
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5162,6 +5162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1183952625}
+  value: 0
 --- !u!61 &1189409250
 BoxCollider2D:
   m_ObjectHideFlags: 0
