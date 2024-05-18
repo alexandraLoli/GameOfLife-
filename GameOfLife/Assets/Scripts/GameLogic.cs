@@ -43,7 +43,7 @@ public class GameLogic : MonoBehaviour
         else if (stage == 3)
         {
             gameTime = 180;
-            moneyBehaviorScript.value = 200;
+            moneyBehaviorScript.value = 300;
             script.minRange = 300;
             script.maxRange = 400;
         }

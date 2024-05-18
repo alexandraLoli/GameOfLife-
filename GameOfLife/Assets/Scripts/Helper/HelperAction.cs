@@ -16,7 +16,7 @@ public class NewBehaviourScript : MonoBehaviour
     //variable for projectile
     public GameObject projectile;
     public Transform firePoint;
-    private float fireTimer = 1.5f;
+    private float fireTimer = 1.2f;
 
     // variable for drag and drop
     private bool isDragging = false;
@@ -90,10 +90,14 @@ public class NewBehaviourScript : MonoBehaviour
                 && transform.position.y < (gameTable[i].transform.position.y + 1.5)
                 )
             {
+                SqaureDrop square = gameTable[i].GetComponent<SqaureDrop>();
+                if (square.inUse)
+                {
+                    break;
+                }
                 transform.position = gameTable[i].transform.position;
                 squareIndex = i;
-
-                SqaureDrop square = gameTable[i].GetComponent<SqaureDrop>();
+               
                 square.inUse = true;
             }
             isDragging = false;

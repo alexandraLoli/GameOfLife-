@@ -698,7 +698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Angel: 200$'
+  m_text: 'Angel: 150$'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d59cf96b3fa26ad47873bdf45bcaa804, type: 2}
   m_sharedMaterial: {fileID: 6449886662624825225, guid: d59cf96b3fa26ad47873bdf45bcaa804, type: 2}
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f77a91dac82cb4ea3beaa8e12fb5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 200
+  price: 150
   canvas: {fileID: 1183952625}
   angel: {fileID: 2127671565}
   scout: {fileID: 1819739992}
