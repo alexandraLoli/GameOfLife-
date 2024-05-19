@@ -15,6 +15,7 @@ public class ShieldAction : MonoBehaviour
     private Vector3 offset;
     public bool isSet = false;
     public List<GameObject> gameTable;
+    private bool nothingHappens = true;
 
     // variables used for defending the enemy
     public float life = 5;
@@ -24,10 +25,14 @@ public class ShieldAction : MonoBehaviour
     // variable to memorize where is a helper on the table
     private int squareIndex = -1;
 
+    // variable for collider
+    private Collider2D colliderShield;
+
     // Start is called before the first frame update
     void Start()
     {
         script = canvas.GetComponent<Money>();
+        colliderShield = gameObject.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -85,6 +90,13 @@ public class ShieldAction : MonoBehaviour
                 offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 script.variableToDisplay -= price;
+                nothingHappens = false;
+                colliderShield.enabled = false;
+            }
+            else
+            {
+                Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                nothingHappens = true;
             }
         }
         else if (squareIndex != -1)
@@ -94,6 +106,7 @@ public class ShieldAction : MonoBehaviour
             Destroy(gameObject);
         }
 
+        
     }
 
     private void OnMouseUp()
@@ -116,14 +129,21 @@ public class ShieldAction : MonoBehaviour
             }
             isDragging = false;
             isSet = true;
+            colliderShield.enabled = true;
         }
 
-        if (squareIndex == -1)
+        if (squareIndex == -1 && !nothingHappens)
         {
             script.variableToDisplay += price;
             Destroy(gameObject);
 
         }
+        else if (squareIndex == -1 && nothingHappens)
+        {
+            Destroy(gameObject);
+        }
+
+        
 
     }
 

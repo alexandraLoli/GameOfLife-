@@ -23,6 +23,7 @@ public class NewBehaviourScript : MonoBehaviour
     private Vector3 offset;
     public bool isSet = false;
     public List<GameObject> gameTable;
+    private bool nothingHappens = true;
 
     // variable to memorize where is a helper on the table
     private int squareIndex = -1;
@@ -68,6 +69,11 @@ public class NewBehaviourScript : MonoBehaviour
                 this.gameObject.GetComponent<Renderer>().enabled = true;
 
                 script.variableToDisplay -= price;
+                nothingHappens = false;
+            } else
+            {
+                Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                nothingHappens = true;
             }
         } else if (squareIndex != -1)
         {
@@ -104,11 +110,14 @@ public class NewBehaviourScript : MonoBehaviour
             isSet = true;
         }
 
-        if (squareIndex == -1)
+        if (squareIndex == -1 && !nothingHappens)
         {
             script.variableToDisplay += price;
             Destroy(gameObject);
             
+        } else if (squareIndex == -1 && nothingHappens)
+        {
+            Destroy(gameObject);
         }
         
     }

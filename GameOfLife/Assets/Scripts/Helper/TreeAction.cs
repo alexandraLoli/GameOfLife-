@@ -15,6 +15,7 @@ public class TreeAction : MonoBehaviour
     private Vector3 offset;
     public bool isSet = false;
     public List<GameObject> gameTable;
+    private bool nothingHappens = true;
 
     //variables for showing money 
     private float moneyInterval = 5;
@@ -72,6 +73,12 @@ public class TreeAction : MonoBehaviour
                 offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 script.variableToDisplay -= price;
+                nothingHappens = false;
+            }
+            else
+            {
+                Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                nothingHappens = true;
             }
         }
         else if (squareIndex != -1)
@@ -105,13 +112,16 @@ public class TreeAction : MonoBehaviour
             isSet = true;
         }
 
-        if (squareIndex == -1)
+        if (squareIndex == -1 && !nothingHappens)
         {
             script.variableToDisplay += price;
             Destroy(gameObject);
 
         }
-
+        else if (squareIndex == -1 && nothingHappens)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
