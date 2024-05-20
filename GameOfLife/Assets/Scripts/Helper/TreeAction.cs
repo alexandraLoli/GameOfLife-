@@ -24,10 +24,15 @@ public class TreeAction : MonoBehaviour
     // variable to memorize where is a helper on the table
     private int squareIndex = -1;
 
+    // variable for collider
+    private Collider2D colliderShield;
+
     // Start is called before the first frame update
     void Start()
     {
         script = canvas.GetComponent<Money>();
+
+        colliderShield = gameObject.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -74,6 +79,7 @@ public class TreeAction : MonoBehaviour
 
                 script.variableToDisplay -= price;
                 nothingHappens = false;
+                colliderShield.enabled = false;
             }
             else
             {
@@ -93,7 +99,7 @@ public class TreeAction : MonoBehaviour
     private void OnMouseUp()
     {
         Debug.Log(gameTable.Count);
-        for (int i = 0; i < gameTable.Count; i++)
+        for (int i = 0; i < gameTable.Count && isDragging; i++)
         {
 
             if (transform.position.x > (gameTable[i].transform.position.x - 1.5)
@@ -107,9 +113,11 @@ public class TreeAction : MonoBehaviour
 
                 SqaureDrop square = gameTable[i].GetComponent<SqaureDrop>();
                 square.inUse = true;
+
+                isDragging = false;
+                isSet = true;
+                colliderShield.enabled = true;
             }
-            isDragging = false;
-            isSet = true;
         }
 
         if (squareIndex == -1 && !nothingHappens)

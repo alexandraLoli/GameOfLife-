@@ -112,7 +112,7 @@ public class ShieldAction : MonoBehaviour
     private void OnMouseUp()
     {
         
-        for (int i = 0; i < gameTable.Count; i++)
+        for (int i = 0; i < gameTable.Count && isDragging; i++)
         {
 
             if (transform.position.x > (gameTable[i].transform.position.x - 1.5)
@@ -126,10 +126,11 @@ public class ShieldAction : MonoBehaviour
 
                 SqaureDrop square = gameTable[i].GetComponent<SqaureDrop>();
                 square.inUse = true;
+
+                isDragging = false;
+                isSet = true;
+                colliderShield.enabled = true;
             }
-            isDragging = false;
-            isSet = true;
-            colliderShield.enabled = true;
         }
 
         if (squareIndex == -1 && !nothingHappens)

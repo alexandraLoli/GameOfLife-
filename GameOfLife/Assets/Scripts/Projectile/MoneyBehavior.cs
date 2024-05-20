@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,7 @@ public class MoneyBehavior : MonoBehaviour
     public GameObject canvas;
     private Money sprite;
     public int value;
+    //private bool touch = false;
     void Start()
     {
         sprite = canvas.GetComponent<Money>();
@@ -19,12 +20,29 @@ public class MoneyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //if (Input.GetMouseButtonDown(1)) {
+        //    touch = true;
+        //    OnMouseDown();
+        //}
+
     }
 
-    private void OnMouseDown()
+    private void OnMouseOver()
     {
-        sprite.variableToDisplay += value;
-        Destroy(gameObject);
+        if (Input.GetMouseButtonDown(1))
+        {
+            sprite.variableToDisplay += value;
+            Destroy(gameObject);
+        }
     }
+
+    //private void OnMouseDown()
+    //{
+    //    if (true)
+    //    {
+    //        sprite.variableToDisplay += value;
+    //        Destroy(gameObject);
+
+    //    }
+    //}
 }
