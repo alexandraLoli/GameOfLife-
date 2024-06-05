@@ -83,4 +83,12 @@ public class AudioManager : MonoBehaviour
             effectsSource.PlayOneShot(fire);
         }
     }
+
+    public void StopBackgroundMusic()
+    {
+        if (backgroundMusicSource != null && backgroundMusicSource.isPlaying)
+        {
+            backgroundMusicSource.Stop();
+        }
+    }
 }

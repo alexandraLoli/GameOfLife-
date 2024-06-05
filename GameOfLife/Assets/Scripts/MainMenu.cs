@@ -83,11 +83,20 @@ public class MainMenu : MonoBehaviour
         PlayClickSound();
        Application.Quit();
     }
+
     private void PlayClickSound()
     {
         if (audioManager != null)
         {
             audioManager.PlayClickSound();
+        }
+    }
+
+    private void StopMusic()
+    {
+        if (audioManager != null)
+        {
+            audioManager.StopBackgroundMusic();
         }
     }
 }

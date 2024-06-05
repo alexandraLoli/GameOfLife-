@@ -4090,6 +4090,7 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 368e4a9c2f30dd74b82de3d6fc4941eb, type: 3}
   avatarHit: {fileID: 8300000, guid: 6fb3b2b3ecf70ec418d2968fa1ff1ca2, type: 3}
   helperHit: {fileID: 8300000, guid: e1b8bcc60ea8ebb49bc8eec24714be15, type: 3}
+  fire: {fileID: 8300000, guid: 7f004c7de7079a6459d3db75c2f5c01c, type: 3}
 --- !u!4 &890246604
 Transform:
   m_ObjectHideFlags: 0
