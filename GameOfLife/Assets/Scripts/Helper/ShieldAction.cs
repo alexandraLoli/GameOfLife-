@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This class is used to describe shield's actions 
+ */
+
 public class ShieldAction : MonoBehaviour
 {
     // variables for new instance
@@ -23,7 +27,7 @@ public class ShieldAction : MonoBehaviour
     private List<GameObject> enemiesWaiting = new List<GameObject>();
 
     // variable to memorize where is a helper on the table
-    private int squareIndex = -1;
+    public int squareIndex = -1;
 
     // variable for collider
     private Collider2D colliderShield;
@@ -31,14 +35,16 @@ public class ShieldAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // we need this to verify and update the TotalMoney
         script = canvas.GetComponent<Money>();
+
         colliderShield = gameObject.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
         for (int i = 0; i < enemiesWaiting.Count; i++)
         {
             if (enemiesWaiting[i] == null)
@@ -52,8 +58,13 @@ public class ShieldAction : MonoBehaviour
             inCollision = false;
         }
 
+
         if (isSet && inCollision)
         {
+            /*
+             * The shield stops enemies, so when it "dies", all the enemies
+             * that were waiting need to continue their motion
+             */
             if (life <= 0)
             {
                 
@@ -75,17 +86,22 @@ public class ShieldAction : MonoBehaviour
         
     }
 
+    // Click the shield 
     private void OnMouseDown()
     {
+        // if it's not on the GameTable
         if (!isSet)
         {
+            // if the player has enough money
             if (script.variableToDisplay >= price)
             {
                 spawnPoint.transform.position = transform.position;
                 spawnPoint.transform.rotation = Quaternion.identity;
 
+                // put another shield in it's place
                 Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
 
+                // useful for Drag and Drop
                 isDragging = true;
                 offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -93,12 +109,15 @@ public class ShieldAction : MonoBehaviour
                 nothingHappens = false;
                 colliderShield.enabled = false;
             }
+            // not important - used to fix a bug
             else
             {
                 Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
                 nothingHappens = true;
             }
         }
+
+        // the shield is already on the GameTable, the player wants to erase it
         else if (squareIndex != -1)
         {
             SqaureDrop square = gameTable[squareIndex].GetComponent<SqaureDrop>();
@@ -109,12 +128,13 @@ public class ShieldAction : MonoBehaviour
         
     }
 
+    // Release the mouse
     private void OnMouseUp()
     {
-        
+        // check if the release happened on the GameTable
         for (int i = 0; i < gameTable.Count && isDragging; i++)
         {
-
+            // if yes, set the shield on the square
             if (transform.position.x > (gameTable[i].transform.position.x - 1.5)
                 && transform.position.x < (gameTable[i].transform.position.x + 1.5)
                 && transform.position.y > (gameTable[i].transform.position.y - 1.5)
@@ -133,6 +153,7 @@ public class ShieldAction : MonoBehaviour
             }
         }
 
+        // not important - used to solve bugs
         if (squareIndex == -1 && !nothingHappens)
         {
             script.variableToDisplay += price;
@@ -148,6 +169,7 @@ public class ShieldAction : MonoBehaviour
 
     }
 
+    // the Drag part from Drag-and-Drop
     private void OnMouseDrag()
     {
         if (isDragging)
@@ -157,14 +179,22 @@ public class ShieldAction : MonoBehaviour
         }
     }
 
+    // Collisions with the enemies
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (isSet)
         {
-            if (collision.gameObject.CompareTag("Illness") ||
-                collision.gameObject.CompareTag("Sorrow") ||
-                collision.gameObject.CompareTag("Accident") ||
-                collision.gameObject.CompareTag("Addiction"))
+            if (collision.gameObject.CompareTag("VirusEnemy") ||
+            collision.gameObject.CompareTag("BrokenBoneEnemy") ||
+            collision.gameObject.CompareTag("SweetsEnemy") ||
+            collision.gameObject.CompareTag("AlcoholEnemy") ||
+            collision.gameObject.CompareTag("PhoneEnemy") ||
+            collision.gameObject.CompareTag("CigaretteEnemy") ||
+            collision.gameObject.CompareTag("CarEnemy") ||
+            collision.gameObject.CompareTag("HouseOnFireEnemy") ||
+            collision.gameObject.CompareTag("SadEnemy") ||
+            collision.gameObject.CompareTag("BrokenHeartEnemy") ||
+            collision.gameObject.CompareTag("WeatherEnemy"))
             {
                 inCollision = true;
                 enemiesWaiting.Add(collision.gameObject);

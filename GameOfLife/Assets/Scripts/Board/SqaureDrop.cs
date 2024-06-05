@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/*
+ * The purpose of this class is to describe if a square of the GameTable is used or not
+ */
+
 public class SqaureDrop : MonoBehaviour
 {
 

@@ -27,6 +27,8 @@ public class HelperAppear : MonoBehaviour
         
     }
 
+
+    // when the player clicks on the Angel, the angel's shield appears next to the Avatar
     public void OnMouseDown()
     {
         if (script.variableToDisplay >= price)

@@ -5,6 +5,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * 
+ * This class is used to show the amount of total money that the player has.
+ * 
+ */
 public class Money : MonoBehaviour
 {
 
@@ -19,6 +24,7 @@ public class Money : MonoBehaviour
         
     }
 
+    // at the beginning of the game, the amount of money is random, and the range is specific to the phase of life
     public void calculateMoney()
     {
         variableToDisplay = Random.Range(minRange, maxRange);

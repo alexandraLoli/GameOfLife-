@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This class describes the behavior of the MoneyTree
+ */
 public class TreeAction : MonoBehaviour
 {
     // variables for new instance
@@ -22,7 +25,7 @@ public class TreeAction : MonoBehaviour
     public GameObject moneySign;
 
     // variable to memorize where is a helper on the table
-    private int squareIndex = -1;
+    public int squareIndex = -1;
 
     // variable for collider
     private Collider2D colliderShield;
@@ -30,6 +33,7 @@ public class TreeAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // we need this to verify and update the TotalMoney
         script = canvas.GetComponent<Money>();
 
         colliderShield = gameObject.GetComponent<Collider2D>();
@@ -38,18 +42,22 @@ public class TreeAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if the MoneyTree is set on the GameTable, is active and can send money
         if (isSet)
         {
             if (moneyInterval <= 0)
             {
                 SendMoney();
-                moneyInterval = 20;
+                moneyInterval = 30;
             }
 
             moneyInterval -= Time.deltaTime;
         }
     }
 
+    /*
+    *  This method makes the dollar sign appear on the scene at a random place
+    */
     private void SendMoney()
     {
         if (moneySign != null)
@@ -63,17 +71,22 @@ public class TreeAction : MonoBehaviour
         }
     }
 
+    // Click the MoneyTree
     private void OnMouseDown()
     {
+        // if it's not on the GameTable
         if (!isSet)
         {
+            // if the player has enough money
             if (script.variableToDisplay >= price)
             {
                 spawnPoint.transform.position = transform.position;
                 spawnPoint.transform.rotation = Quaternion.identity;
 
+                // put another tree in it's place
                 Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
 
+                // useful for Drag and Drop
                 isDragging = true;
                 offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -81,12 +94,16 @@ public class TreeAction : MonoBehaviour
                 nothingHappens = false;
                 colliderShield.enabled = false;
             }
+
+            // not important - used to fix a bug
             else
             {
                 Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
                 nothingHappens = true;
             }
         }
+
+        // the MoneyTree is already on the GameTable, the player wants to erase it
         else if (squareIndex != -1)
         {
             SqaureDrop square = gameTable[squareIndex].GetComponent<SqaureDrop>();
@@ -96,12 +113,13 @@ public class TreeAction : MonoBehaviour
 
     }
 
+    // Release the mouse
     private void OnMouseUp()
     {
-        Debug.Log(gameTable.Count);
+        // check if the release happened on the GameTable
         for (int i = 0; i < gameTable.Count && isDragging; i++)
         {
-
+            // if yes, set the MoneyTree on the square
             if (transform.position.x > (gameTable[i].transform.position.x - 1.5)
                 && transform.position.x < (gameTable[i].transform.position.x + 1.5)
                 && transform.position.y > (gameTable[i].transform.position.y - 1.5)
@@ -120,6 +138,7 @@ public class TreeAction : MonoBehaviour
             }
         }
 
+        // not important - used to solve bugs
         if (squareIndex == -1 && !nothingHappens)
         {
             script.variableToDisplay += price;
@@ -133,6 +152,7 @@ public class TreeAction : MonoBehaviour
 
     }
 
+    // the Drag part from Drag-and-Drop
     private void OnMouseDrag()
     {
         if (isDragging)

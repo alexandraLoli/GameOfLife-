@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+/*
+ * This class describes helper's actions
+ */
+
 public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -16,7 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
     //variable for projectile
     public GameObject projectile;
     public Transform firePoint;
-    private float fireTimer = 1.2f;
+    private float fireTimer = 1f;
 
     // variable for drag and drop
     private bool isDragging = false;
@@ -26,7 +31,7 @@ public class NewBehaviourScript : MonoBehaviour
     private bool nothingHappens = true;
 
     // variable to memorize where is a helper on the table
-    private int squareIndex = -1;
+    public int squareIndex = -1;
 
     // variable for collider
     private Collider2D colliderShield;
@@ -58,17 +63,22 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
+    // Click the helper
     private void OnMouseDown()
     {
+        // if it's not on the GameTable
         if (!isSet)
         {
+            // if the player has enough money
             if (script.variableToDisplay >= price)
             {
                 spawnPoint.transform.position = transform.position;
                 spawnPoint.transform.rotation = Quaternion.identity;
 
+                // put another helper in it's place
                 Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
 
+                // useful for Drag and Drop
                 isDragging = true;
                 offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 this.gameObject.GetComponent<Renderer>().enabled = true;
@@ -77,12 +87,18 @@ public class NewBehaviourScript : MonoBehaviour
                 nothingHappens = false;
 
                 colliderShield.enabled = false;
-            } else
+            } 
+            
+            // not important - used to fix a bug
+            else
             {
                 Instantiate(this.gameObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
                 nothingHappens = true;
             }
-        } else if (squareIndex != -1)
+        } 
+        
+        // the helper is already on the GameTable, the player wants to erase it
+        else if (squareIndex != -1)
         {
             SqaureDrop square = gameTable[squareIndex].GetComponent<SqaureDrop>();
             square.inUse = false;
@@ -91,12 +107,13 @@ public class NewBehaviourScript : MonoBehaviour
 
     }
 
+    // Release the mouse
     private void OnMouseUp()
     {
-        Debug.Log(gameTable.Count);
+        // check if the release happened on the GameTable
         for (int i = 0; i< gameTable.Count && isDragging; i++)
         {
-            
+            // if yes, set the helper on the square
             if (transform.position.x > (gameTable[i].transform.position.x - 1.5)
                 && transform.position.x < (gameTable[i].transform.position.x + 1.5)
                 && transform.position.y > (gameTable[i].transform.position.y - 1.5)
@@ -120,6 +137,7 @@ public class NewBehaviourScript : MonoBehaviour
            
         }
 
+        // not important - used to solve bugs
         if (squareIndex == -1 && !nothingHappens)
         {
             script.variableToDisplay += price;
@@ -132,6 +150,7 @@ public class NewBehaviourScript : MonoBehaviour
         
     }
 
+    // the Drag part from Drag-and-Drop
     private void OnMouseDrag()
     {
         if (isDragging)
@@ -141,6 +160,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
+    // Method used to fire a projectile
     void FireProjectile()
     {
         if (projectile != null)

@@ -37,22 +37,22 @@ public class MainMenu : MonoBehaviour
 
     public void StartChildPhase()
     {
-        SceneManager.LoadSceneAsync(6);
+        SceneManager.LoadSceneAsync(7);
     }
 
     public void StartTeenPhase()
     {
-        SceneManager.LoadSceneAsync(8);
+        SceneManager.LoadSceneAsync(9);
     }
 
     public void StartAdultPhase()
     {
-        SceneManager.LoadSceneAsync(10);
+        SceneManager.LoadSceneAsync(11);
     }
 
     public void StartOldPhase()
     {
-        SceneManager.LoadSceneAsync(12);
+        SceneManager.LoadSceneAsync(13);
     }
 
     public void GoToMainMenu()
@@ -62,7 +62,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadSceneAsync(5);
+        SceneManager.LoadSceneAsync(6);
     }
 
     public void OnApplicationQuit()

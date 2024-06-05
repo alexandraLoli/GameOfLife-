@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This class describes the behavior of the Dollar Sign
+ */
 public class MoneyBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,20 +16,19 @@ public class MoneyBehavior : MonoBehaviour
     //private bool touch = false;
     void Start()
     {
+
         sprite = canvas.GetComponent<Money>();
+
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("MoneyLayer"), LayerMask.NameToLayer("Default"), true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButtonDown(1)) {
-        //    touch = true;
-        //    OnMouseDown();
-        //}
 
     }
 
+    // When the player click on the DollarSign, they receive the money and the gameObject disspears
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(1))
@@ -36,13 +38,4 @@ public class MoneyBehavior : MonoBehaviour
         }
     }
 
-    //private void OnMouseDown()
-    //{
-    //    if (true)
-    //    {
-    //        sprite.variableToDisplay += value;
-    //        Destroy(gameObject);
-
-    //    }
-    //}
 }

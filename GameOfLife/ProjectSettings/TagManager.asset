@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Helper
   - Illness
   - Addiction
@@ -14,6 +13,21 @@ TagManager:
   - MoneyTree
   - Shield
   - AngelShield
+  - VirusEnemy
+  - BrokenBoneEnemy
+  - SweetsEnemy
+  - AlcoholEnemy
+  - PhoneEnemy
+  - CigaretteEnemy
+  - CarEnemy
+  - WeatherEnemy
+  - HouseOnFireEnemy
+  - DoctorHelper
+  - FriendHelper
+  - TherapistHelper
+  - SadEnemy
+  - BrokenHeartEnemy
+  - BigBossEnemy
   layers:
   - Default
   - TransparentFX
@@ -26,7 +40,7 @@ TagManager:
   - EnemyLayer
   - MoneyLayer
   - ShieldLayer
-  - 
+  - BigBossLayer
   - 
   - 
   - 
