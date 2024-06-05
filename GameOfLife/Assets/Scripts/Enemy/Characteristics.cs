@@ -13,9 +13,12 @@ public class Characteristics : MonoBehaviour
     private float spawnPositionX;
 
     public float life = 3;
+
+    private AudioManager audioManager;
     void Start()
     {
         spawnPositionX = transform.position.x;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class Characteristics : MonoBehaviour
 
         if (life <= 0)
         {
+            //add sound here (maybe)
             Destroy(gameObject);
         }
     }
@@ -58,6 +62,8 @@ public class Characteristics : MonoBehaviour
                     .squareIndex].GetComponent<SqaureDrop>()
                     .inUse = false;
             }
+
+            PlatHelperHitSound();
             Destroy(collision.gameObject);
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(-0.5f, 0.0f);
@@ -75,6 +81,7 @@ public class Characteristics : MonoBehaviour
                                                                         || gameObject.CompareTag("BrokenHeartEnemy")))
                  )
         {
+            PlayHitSound();
             Destroy(collision.gameObject);
             life--;
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
@@ -91,6 +98,7 @@ public class Characteristics : MonoBehaviour
                                                                   gameObject.CompareTag("CigaretteEnemy") ||
                                                                   gameObject.CompareTag("BrokenBoneEnemy"))) )
         {
+            PlayHitSound();
             Destroy(collision.gameObject);
             life -= 0.5f;
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
@@ -100,6 +108,7 @@ public class Characteristics : MonoBehaviour
         // the enemy hits the avatar
         else if (collision.gameObject.CompareTag("Avatar"))
         {
+            PlayAvatarHitSound();
             Destroy(gameObject);
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(-0.5f, 0.0f);
@@ -111,6 +120,7 @@ public class Characteristics : MonoBehaviour
                                                                     gameObject.CompareTag("WeatherEnemy"))
                 )
         {
+            PlayHitSound(); //also another sound here
             Destroy(gameObject);
         }
 
@@ -120,7 +130,7 @@ public class Characteristics : MonoBehaviour
                                                                     gameObject.CompareTag("WeatherEnemy"))
                 )
         {
-
+            PlayHitSound(); //the different one from above here
             AngelScoutBehavior script = collision.gameObject.GetComponent<AngelScoutBehavior>();
             Destroy(script.angel);
             Destroy(collision.gameObject);
@@ -131,16 +141,39 @@ public class Characteristics : MonoBehaviour
         // the enemy is in collision with the shield
         else if (collision.gameObject.CompareTag("Shield"))
         {
-
+            PlayHitSound();
         }
 
         // any other collision
         else
         {
+            PlayHitSound();
             Destroy(collision.gameObject);
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(-0.5f, 0.0f);
         }
     }
+    private void PlayHitSound()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlayHitSound();
+        }
+    }
 
+    private void PlayAvatarHitSound()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlayAvatarHitSound();
+        }
+    }
+
+    private void PlatHelperHitSound()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlayHelperHitSound();
+        }
+    }
 }

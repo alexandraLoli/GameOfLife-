@@ -36,6 +36,8 @@ public class NewBehaviourScript : MonoBehaviour
     // variable for collider
     private Collider2D colliderShield;
 
+    private AudioManager audioManager;
+
     void Start()
     {
         script = canvas.GetComponent<Money>();
@@ -44,6 +46,8 @@ public class NewBehaviourScript : MonoBehaviour
         this.gameObject.GetComponent<Renderer>().enabled = false;
 
         colliderShield = gameObject.GetComponent<Collider2D>();
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
             
@@ -165,6 +169,8 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (projectile != null)
         {
+            PlayFirinfSound();
+
             GameObject newProjectile = Instantiate(projectile, firePoint.position + new Vector3(1.0f, 0.0f, 0.0f), firePoint.rotation);
             Rigidbody2D projectileRB = newProjectile.GetComponent<Rigidbody2D>();
 
@@ -174,4 +180,11 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
+    private void PlayFirinfSound()
+    {
+        if (audioManager != null)
+        {
+            FindObjectOfType<AudioManager>().PlayFireSound();
+        }
+    }
 }

@@ -3,7 +3,11 @@ guid: d24653fac5d75094ba2082189be41e8a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - backgroundMusicSource: {instanceID: 0}
+  - effectsSource: {instanceID: 0}
+  - clickSound: {fileID: 8300000, guid: 8dafd0cafc6bae341a109eb3b694b8b4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

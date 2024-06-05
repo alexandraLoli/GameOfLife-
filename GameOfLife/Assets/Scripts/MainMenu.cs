@@ -5,32 +5,44 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private AudioManager audioManager;
+
+    public void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
    public void PlayGame()
     {
+        PlayClickSound();
         SceneManager.LoadSceneAsync(1);
     }
 
     public void Skip()
     {
+        PlayClickSound();
         SceneManager.LoadSceneAsync(5);
     }
 
     public void StartChapter1()
     {
+        PlayClickSound();
         SceneManager.LoadSceneAsync(2);
     }
 
     public void StartChapter2()
     {
+        PlayClickSound();
         SceneManager.LoadSceneAsync(3);
     }
 
     public void StartChapter3()
     {
+        PlayClickSound();
         SceneManager.LoadSceneAsync(4);
     }
     public void StartChapter4()
     {
+        PlayClickSound();
         SceneManager.LoadSceneAsync(5);
     }
 
@@ -62,11 +74,29 @@ public class MainMenu : MonoBehaviour
 
     public void PlayAgain()
     {
+        PlayClickSound();
         SceneManager.LoadSceneAsync(6);
     }
 
     public void OnApplicationQuit()
     {
+        PlayClickSound();
        Application.Quit();
+    }
+
+    private void PlayClickSound()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlayClickSound();
+        }
+    }
+
+    private void StopMusic()
+    {
+        if (audioManager != null)
+        {
+            audioManager.StopBackgroundMusic();
+        }
     }
 }
