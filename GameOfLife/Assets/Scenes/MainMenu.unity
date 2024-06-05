@@ -1097,6 +1097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f784d26312ec7f4cb9d0c7a2cb23c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  sceneLoader: {fileID: 0}
 --- !u!1 &1413318124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,10 +1130,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
-  backgroundMusicSource: {fileID: 0}
+  backgroundMusicSource: {fileID: 1413318127}
   effectsSource: {fileID: 0}
   clickSound: {fileID: 8300000, guid: 8dafd0cafc6bae341a109eb3b694b8b4, type: 3}
   hitSound: {fileID: 0}
+  avatarHit: {fileID: 0}
+  helperHit: {fileID: 0}
+  fire: {fileID: 0}
 --- !u!4 &1413318126
 Transform:
   m_ObjectHideFlags: 0
