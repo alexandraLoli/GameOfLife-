@@ -15,6 +15,8 @@ public class BigBossBehavior : MonoBehaviour
     private float spawnPositionX;
 
     public float life = 20;
+
+    private AudioManager audioManager;
     void Start()
     {
         gameObject.GetComponent<Renderer>().enabled = false;
@@ -70,6 +72,8 @@ public class BigBossBehavior : MonoBehaviour
                     .squareIndex].GetComponent<SqaureDrop>()
                     .inUse = false;
             }
+
+            PlayAvatarHitSound();
             Destroy(collision.gameObject);
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(-0.5f, 0.0f);
@@ -79,6 +83,7 @@ public class BigBossBehavior : MonoBehaviour
         // big boss hit by pill
         else if (collision.gameObject.CompareTag("Illness"))
         {
+            PlayHitSound();
             Destroy(collision.gameObject);
             life -= 0.5f;
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
@@ -88,6 +93,7 @@ public class BigBossBehavior : MonoBehaviour
         // big boss hit by heart
         else if (collision.gameObject.CompareTag("Sorrow"))
         {
+            PlayHitSound();
             Destroy(collision.gameObject);
             life -= 1;
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
@@ -97,6 +103,7 @@ public class BigBossBehavior : MonoBehaviour
         // big boss hit by ying yang
         else if (collision.gameObject.CompareTag("Addiction"))
         {
+            PlayHitSound();
             Destroy(collision.gameObject);
             life -= 0.7f;
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
@@ -106,15 +113,38 @@ public class BigBossBehavior : MonoBehaviour
         // the enemy hits the avatar
         else if (collision.gameObject.CompareTag("Avatar"))
         {
+            PlayAvatarHitSound();
             Destroy(gameObject);
         }
 
         // any other collision
         else
         {
+            PlayHitSound();
             Destroy(collision.gameObject);
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(-0.2f, 0.0f);
+        }
+    }
+    private void PlayHitSound()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlayHitSound();
+        }
+    }
+    private void PlayAvatarHitSound()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlayAvatarHitSound();
+        }
+    }
+    private void PlayHelperHitSound()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlayHelperHitSound();
         }
     }
 }
