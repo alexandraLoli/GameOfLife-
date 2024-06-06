@@ -84,11 +84,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void StopBackgroundMusic()
+    public static void StopMusic()
     {
-        if (backgroundMusicSource != null && backgroundMusicSource.isPlaying)
+        if (instance != null && instance.backgroundMusicSource.isPlaying)
         {
-            backgroundMusicSource.Stop();
+            instance.backgroundMusicSource.Stop();
+            Destroy(instance.gameObject);
+            instance = null;
         }
     }
 }
